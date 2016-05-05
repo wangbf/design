@@ -119,7 +119,7 @@ index.bundle.js中。
 
 推荐阅读
 ============
-https://github.com/jashkenas/backbone/wiki/Backbone%2C-The-Primer
+https://github.com/jashkenas/backbone/wiki/Backbone%2C-The-Primer  
 http://underscorejs.org/#template
 
 
