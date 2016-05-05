@@ -1,0 +1,9 @@
+<div class="ibox-operation">
+	<button class="btn btn-white btn-xs layer-demolist-s1 fa fa-upload upload" type="button">
+		上传
+	</button>
+	<button class="btn btn-white btn-xs layer-demolist-s1 fa fa-gear setting" type="button" data-handle="handleLinkImageSetting">
+		设置
+	</button>
+</div>
+<a class="img-bg-1 link-image" target="_blank" href="<%if(link) {%><%=link%><%} else {%>javascript: void(0)<%}%>" class="img-bg-1" style="<%if (url) {%>background-image: url(<%=url%>);<%}%>"></a>

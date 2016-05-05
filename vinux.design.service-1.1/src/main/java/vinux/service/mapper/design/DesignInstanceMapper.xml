@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="vinux.service.dao.design.DesignInstanceMapper" >
+  <resultMap id="BaseResultMap" type="vinux.service.entity.design.DesignInstance" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CREATOR_ID" property="creatorId" jdbcType="BIGINT" />
+    <result column="CREATOR_ROLE_TYPE" property="creatorRoleType" jdbcType="VARCHAR" />
+    <result column="CDATE" property="cdate" jdbcType="TIMESTAMP" />
+    <result column="UDATE" property="udate" jdbcType="TIMESTAMP" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+    <result column="BAK1" property="bak1" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, TYPE, NAME, CREATOR_ID, CREATOR_ROLE_TYPE, CDATE, UDATE, FLAG, BAK1, STATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from VINUX_DESIGN_INSTANCE
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from VINUX_DESIGN_INSTANCE
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="vinux.service.entity.design.DesignInstance" >
+    insert into VINUX_DESIGN_INSTANCE (ID, TYPE, NAME, 
+      CREATOR_ID, CREATOR_ROLE_TYPE, CDATE, 
+      UDATE, FLAG, BAK1, 
+      STATE)
+    values (#{id,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{creatorId,jdbcType=BIGINT}, #{creatorRoleType,jdbcType=VARCHAR}, #{cdate,jdbcType=TIMESTAMP}, 
+      #{udate,jdbcType=TIMESTAMP}, #{flag,jdbcType=VARCHAR}, #{bak1,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="vinux.service.entity.design.DesignInstance" useGeneratedKeys="true" keyProperty="id">
+    insert into VINUX_DESIGN_INSTANCE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="creatorId != null" >
+        CREATOR_ID,
+      </if>
+      <if test="creatorRoleType != null" >
+        CREATOR_ROLE_TYPE,
+      </if>
+      <if test="cdate != null" >
+        CDATE,
+      </if>
+      <if test="udate != null" >
+        UDATE,
+      </if>
+      <if test="flag != null" >
+        FLAG,
+      </if>
+      <if test="bak1 != null" >
+        BAK1,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null" >
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="creatorRoleType != null" >
+        #{creatorRoleType,jdbcType=VARCHAR},
+      </if>
+      <if test="cdate != null" >
+        #{cdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udate != null" >
+        #{udate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="vinux.service.entity.design.DesignInstance" >
+    update VINUX_DESIGN_INSTANCE
+    <set >
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorId != null" >
+        CREATOR_ID = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="creatorRoleType != null" >
+        CREATOR_ROLE_TYPE = #{creatorRoleType,jdbcType=VARCHAR},
+      </if>
+      <if test="cdate != null" >
+        CDATE = #{cdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udate != null" >
+        UDATE = #{udate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flag != null" >
+        FLAG = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        BAK1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="vinux.service.entity.design.DesignInstance" >
+    update VINUX_DESIGN_INSTANCE
+    set TYPE = #{type,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      CREATOR_ID = #{creatorId,jdbcType=BIGINT},
+      CREATOR_ROLE_TYPE = #{creatorRoleType,jdbcType=VARCHAR},
+      CDATE = #{cdate,jdbcType=TIMESTAMP},
+      UDATE = #{udate,jdbcType=TIMESTAMP},
+      FLAG = #{flag,jdbcType=VARCHAR},
+      BAK1 = #{bak1,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <!-- 扩展的 -->
+  <!-- 通用查询 -->
+  <select id="find" resultMap="BaseResultMap" parameterType="vinux.service.query.design.DesignInstanceQuery">
+  	select 
+  	<include refid="Base_Column_List"></include>
+  	from VINUX_DESIGN_INSTANCE
+  	<where>
+  		<if test="creatorId != null">
+  			AND CREATOR_ID = #{creatorId,jdbcType=BIGINT}
+  		</if>
+  	</where>
+  </select>
+</mapper>

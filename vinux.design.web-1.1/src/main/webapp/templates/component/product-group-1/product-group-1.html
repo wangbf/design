@@ -1,0 +1,46 @@
+<!--begin 组合顶部的图片 -->
+<div class="ibox-header-style-1">
+	<button class="btn btn-white btn-xs fa fa-upload upload-top" type="button">上传</button>
+	<button class="btn btn-white btn-xs fa fa-gear setting-top" type="button">设置</button>
+	<%if (options) {%>
+		<%for (var i = 0; i < options.length; i++) {%>
+			<button class="fa btn btn-xs <%=options[i].icon%> <%=options[i].opt%>" type="button"><%=options[i].name%></button>
+		<%}%>
+	<%}%>
+</div>
+<div class="floor-1-title h100 boder-style-1" style=" background-repeat:no-repeat; background-position:top;">
+	<a <%if (top.link) {%>href="<%=top.link%>"<%}%>target="<%if (top.openInAnotherWindow) {%>_blank<%} else {%>_self<%}%>">
+	<%if (top._url) {%>
+		<image src="<%=top._url%>" height="<%=top.height%>px" width="100%"/>	
+	<% } %>
+	</a>
+	
+</div>
+<!-- end -->
+<div class="w1200 m-style">
+	<!-- begin 中部 -->
+	<div class="floor-1-content">
+		<div class="por">
+			<!-- begin 中部左侧图片 -->
+			<div class="a">
+				<div class="ibox-operation">
+					<button class="btn btn-white btn-xs layer-demolist-s1 fa fa-upload upload-left" type="button">
+						上传
+					</button>
+					<button class="btn btn-white btn-xs layer-demolist-s1 fa fa-gear setting-left" type="button">
+						设置
+					</button>
+				</div>
+				<a class="img-bg-1 link-image" target="<%if (left.openInAnotherWindow) {%>_blank<%} else {%>_self<%}%>" <%if(left.link){%>href="<%=left.link%>"<%}%>class="img-bg-1" style="<%if (left._url) {%>background-image: url(<%=left._url%>);<%}%>"></a>
+			</div>
+			<!-- end -->
+			<!-- begin 中部右侧的商品 -->
+			
+				<ul class="b">
+					
+				</ul>
+			
+			<!-- end -->
+		</div>
+	</div>
+</div>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="vinux.service.dao.design.DesignPageMapper" >
+  <resultMap id="BaseResultMap" type="vinux.service.entity.design.DesignPage" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="INSTANCE_ID" property="instanceId" jdbcType="BIGINT" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CDATE" property="cdate" jdbcType="TIMESTAMP" />
+    <result column="UDATE" property="udate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, INSTANCE_ID, CDATE, TYPE, UDATE
+  </sql>
+  <sql id="Blob_Column_List" >
+    DATA
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from VINUX_DESIGN_PAGE
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from VINUX_DESIGN_PAGE
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="vinux.service.entity.design.DesignPage" >
+    insert into VINUX_DESIGN_PAGE (ID, TYPE, NAME, INSTANCE_ID, CDATE, 
+      UDATE)
+    values (#{id,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+    	#{instanceId,jdbcType=BIGINT}, #{cdate,jdbcType=TIMESTAMP}, 
+     	#{udate,jdbcType=TIMESTAMP}
+  </insert>
+  <insert id="insertSelective" parameterType="vinux.service.entity.design.DesignPage" useGeneratedKeys="true" keyProperty="id">
+    insert into VINUX_DESIGN_PAGE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="instanceId != null" >
+        INSTANCE_ID,
+      </if>
+      <if test="cdate != null" >
+        CDATE,
+      </if>
+      <if test="udate != null" >
+        UDATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="instanceId != null" >
+        #{instanceId,jdbcType=BIGINT},
+      </if>
+      <if test="cdate != null" >
+        #{cdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udate != null" >
+        #{udate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="vinux.service.entity.design.DesignPage" >
+    update VINUX_DESIGN_PAGE
+    <set >
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="instanceId != null" >
+        INSTANCE_ID = #{instanceId,jdbcType=BIGINT},
+      </if>
+      <if test="cdate != null" >
+        CDATE = #{cdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udate != null" >
+        UDATE = #{udate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="vinux.service.entity.design.DesignPage" >
+    update VINUX_DESIGN_PAGE
+    set INSTANCE_ID = #{instanceId,jdbcType=BIGINT},
+      CDATE = #{cdate,jdbcType=TIMESTAMP},
+      UDATE = #{udate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <!-- 扩展的 -->
+  <select id="find" resultMap="BaseResultMap" parameterType="vinux.service.query.design.DesignPageQuery">
+  	select
+  	<include refid="Base_Column_List" />
+  	from VINUX_DESIGN_PAGE
+  	<where>
+  		<if test="instanceId != null">
+  			AND INSTANCE_ID = #{instanceId,jdbcType=BIGINT}
+  		</if>
+  		<if test="type != null">
+  			AND TYPE = #{type,jdbcType=VARCHAR}
+  		</if>
+  	</where>
+  </select>
+  
+  <select id="findWithData" resultMap="BaseResultMap" parameterType="vinux.service.query.design.DesignPageQuery">
+  	select
+  	<include refid="Base_Column_List" />
+  	from VINUX_DESIGN_PAGE
+  	<where>
+  		<if test="instanceId != null">
+  			AND INSTANCE_ID = #{instanceId,jdbcType=BIGINT}
+  		</if>
+  		<if test="type != null">
+  			AND TYPE = #{type,jdbcType=VARCHAR}
+  		</if>
+  	</where>
+  </select>
+</mapper>

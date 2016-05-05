@@ -1,0 +1,13 @@
+<%for (var i = 0; i < menus.length; i++) {%>
+	<li> 
+		<a href="javascript: void(0);"><i class="fa fa-th-large z16"></i> <span class="nav-label"><%=menus[i].name%></span></a>
+		<ul class="nav nav-second-level">
+			<%var subs = menus[i].subs;%>
+			<%for (var j = 0; j < subs.length; j++) {%>
+				<li class="panel-item-<%=menus[i].type%> ui-draggable" data-type="<%=subs[j].type%>">
+						<a class="drag"><%=subs[j].name%></a>
+				</li>
+			<%}%>
+		</ul>
+	</li>
+<%}%>
