@@ -1,6 +1,6 @@
 简介
 ============
-可视化拖拽设计专题模板采用了模块化的开发方式，用webpack管理模块间依赖，用backbone.js做mvc，用eventemitter2做模块间解藕，用jquery ui的插件做拖拽。
+可视化拖拽设计专题模板采用了模块化的开发方式，用webpack管理模块间依赖，用backbone.js做mvc，用eventemitter2做模块间解藕，用jquery ui做拖拽。
 
 *   webpack
 	在市面上众多的模块管理工具，requirejs、seajs（京东在用）、kissy（淘宝的框架）、browserify、webpack等等，最终选择了webpack， 它简单好用，可以很方便的定义模块，并且不仅可以管理js，还可以管理css和图片文件，强大的插件体系也提供了很多强大的功能，并且同时支持cmd和amd规范。

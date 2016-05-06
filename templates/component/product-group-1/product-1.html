@@ -1,0 +1,36 @@
+	<% if (null != productId) { %>
+		<a target="_blank" <%if (detailUrl) {%>href="<%= detailUrl %>"<%}%> class="sale-products-img">
+			<img src="<%= image %>" />
+			<!-- 
+			<div class="removes">
+				<button class="btn btn-white btn-xs remove" type="button"><i class="fa fa-times"></i> 删除</button>
+			</div>
+			 -->
+			<div class="discount"> 
+				<span class="dt-a"><%= fund %></span>
+				<i class="dt-b"></i>
+			</div>
+		</a> 
+		<a target="_blank" <%if (detailUrl) {%>href="<%= detailUrl %>"<%}%> class="sale-title"><%= title %></a>
+		<p class="sale-price">
+			<span class="price-a">
+				<strong>￥<%= actPrice %></strong>
+				<!-- 
+				<label>￥0</label>
+				 -->
+			</span> 
+		</p>
+	<% } else { %>
+		<a href="javascript:void(0);" class="sale-products-img">
+			<img src="http://design.vinuxpost.com/images/design/blank.jpg" />
+		</a> 
+		<a href="" class="sale-title">空</a>
+		<p class="sale-price">
+			<span class="price-a"> 
+				<strong>￥0</strong> 
+				<!-- 
+				<label>￥0</label>
+				 -->
+			</span>
+		</p>
+	<% } %>

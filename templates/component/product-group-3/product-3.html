@@ -1,0 +1,15 @@
+<% if (null != productId) { %>
+	<a target="_blank" href="<%= detailUrl %>">
+		<span class="a"><img src="<%= image %>" ></span>
+		<span class="b m10top"></span>
+		<span class="c m10top"><%= title %></span>
+		<span class="d">￥<%= actPrice %></span>
+		<a target="_blank" href="<%= detailUrl %>" class="e m10top" >立即购买></a>
+	</a>
+<% } else {%>
+	<span class="a"><img src="http://design.vinuxpost.com/images/design/blank.jpg" ></span>
+	<span class="b m10top"></span>
+	<span class="c m10top">空</span>
+	<span class="d">￥0.00</span>
+	<a href="javascript:void(0);" class="e m10top" >立即购买></a>
+<%}%>

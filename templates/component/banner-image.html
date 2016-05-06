@@ -1,0 +1,14 @@
+<div class="ibox-header-style-1">
+	<%if (options) {%>
+		<%for (var i = 0; i < options.length; i++) {%>
+			  <button class="fa btn btn-xs <%=options[i].icon%> <%=options[i].opt%>" type="button"><%=options[i].name%></button>
+		<%}%>
+	<%}%>
+</div>
+<div class="images-max-content banner-image" style="background-repeat:no-repeat; background-position:top; background-color:#fff; height: <%=style.height%>px">
+	<a <%if (link) {%>href="<%=link%>"<%}%> target="<%if (openInAnotherWindow) {%>_blank<%} else {%>_self<%}%>">
+	<%if (_url) {%>
+		<image src="<%=_url%>" height="<%=style.height%>px" width="100%"/>	
+	<% } %>
+	</a>
+</div>
