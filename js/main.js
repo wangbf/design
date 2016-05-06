@@ -18,10 +18,7 @@ $(function() {
 	initLeftMenu();
 });
 
-function initCustomRequires() {
-	var instanceType = $('#instanceType').val();
-	var pageType = $('#pageType').val();
-	
+function initCustomRequires() {	
 	var GlobalSettingModal = require('modal/GlobalSettingModal'),
 		SetLinkImageModal = require('modal/SetLinkImageModal'),
 		UploadModal = require('modal/UploadModal'),
@@ -35,17 +32,10 @@ function initCustomRequires() {
 		new SetNavBarModal, 
 		new SetLunboModal,
 		new SetBoxModal;
-	
-	if ('shop' == instanceType) {
-		var SelectProductView = require('./modules/component/SelectProduct');
-		new SelectProductView;
-	}
 }
 
-function initLeftMenu(instanceType, pageType) {
+function initLeftMenu() {
 	var LeftMenu = require('./modules/menu/LeftMenu');
-	var instanceType = $('#instanceType').val();
-	var pageType = $('#pageType').val();
 	var layout = MainConstants.MENU.BOX;
 	layout.subs.push(MainConstants.MENU.BOX100);
 	layout.subs.push(MainConstants.MENU.BOX1260);
@@ -126,16 +116,6 @@ function initWindow() {
  * 初始化编辑区内的各种事件
  */
 function initDesignArea() {
-//	$('#page-wrapper, #page-wrapper .ibox-content').sortable({
-//			connectWith: ".ibox-content",
-//			//opacity: .35,
-//			handle: ".drag",
-//			receive: function() {
-//				var vm = MainStore.getCurrentEditModule();
-//				MainAction.addModule(vm);
-////				MainStore.emitBoxAddedEvent(vm);
-//			}
-//		});
 	/**
 	 * 编辑区，将组件拖拽到这里
 	 */
@@ -234,32 +214,7 @@ function initDesignArea() {
 				
 				formatHtml = $('#publish-layout').html();
 				
-				$.ajax({
-					url: '/main/publish/page/' + ModuleCollection.pageModel.id + '.vhtml',
-					type: 'post',
-					data: {
-						instanceId: ModuleCollection.pageModel.instanceId,
-						type: ModuleCollection.pageModel.type,
-						html: formatHtml
-					},
-					dataType: 'json',
-					cache: false,
-					success: function(data) {
-						if (200 == data.status) {
-							toastr.remove();
-							toastr.success(data.message);
-						} else {
-							toastr.remove();
-							toastr.error(data.message);
-						}
-					},
-					error: function() {
-						toastr.error('发布失败');
-					},
-					complete: function() {
-						$('#btn-publish').removeClass('disabled').attr('disabled', false);
-					}
-				});
+				toastr.success('发布成功');
 			} catch (e) {
 				toastr.error('发布失败');
 			}
