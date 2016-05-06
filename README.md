@@ -3,12 +3,12 @@
 可视化拖拽设计专题模板采用了模块化的开发方式，用webpack管理模块间依赖，用backbone.js做mvc，用eventemitter2做模块间解藕，用jquery ui做拖拽。
 
 *   webpack
-	在市面上众多的模块管理工具，requirejs、seajs（京东在用）、kissy（淘宝的框架）、browserify、webpack等等，最终选择了webpack， 它简单好用，可以很方便的定义模块，并且不仅可以管理js，还可以管理css和图片文件，强大的插件体系也提供了很多强大的功能，并且同时支持cmd和amd规范。
+	在市面上众多的模块管理工具，requirejs、seajs、kissy、browserify、webpack等等，最终选择了webpack， 它简单好用，可以很方便的定义模块，并且不仅可以管理js，还可以管理css和图片文件，强大的插件体系也提供了很多强大的功能，并且同时支持cmd和amd规范。
 
 	关于webpack更多的内容请参考官网http://webpack.github.io。
 
 *   backbone
-	组件化的框架非常丰富，avalong(老牌的mvvm框架)、angular(现在很火的mvvm框架)、vue.js(简单精巧的mvvm)、reactjs(一样很火的view层实现)、backbone(老牌的mvc框架)等。
+	组件化的框架非常丰富，avalong、angular、vue.js、reactjs、backbone等。
 	每个框架都能解决一些痛点，但考虑到浏览器兼容性、学习曲线、复杂性等问题，最终选择了backbone.js。backbone.js的文件很小，并且没有像其他框架一样应用了一些现代浏览器支持的js特性来实现对象的监听，对浏览器支持很好，上手很快，基本照着官网的帮助文档就能使用了。
 	
 	backbone的路由功能可以提供很好单页面应用的支持，对应奶牛端的应用场景可能很适合。
@@ -43,10 +43,6 @@
 	webpack --watch
 	该命令会读取webpack.config.js并编译静态文件，自动在js目录下创建assets目录，并将项目中定义的模块编译到
 index.bundle.js中。
-
-	*注意，webpack --watch命令会持续监听webapp目录，发现静态文件修改，就自动编译，只有编译过（webpack自己组织代码的方式）才会在页面中生效。
-	*页面中引入的js只有一个，即：index.bundle.js，该文件包含所有除jquery等公共js库之外的所有js代码。
-	*node_modules目录下的文件，不需要提交(文件太多)，这是webpack在编译过程中需要依赖的，运行只引入index.bundle.js就可以了。
 
 各模块说明
 ============
