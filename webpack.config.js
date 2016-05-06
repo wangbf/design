@@ -19,8 +19,7 @@ module.exports = {
     },
     output: {
         path: './assets',
-        filename: "[name].bundle.js",
-        publicPath: 'http://design.vinuxpost.com/assets/'
+        filename: "[name].bundle.js"
     },
     resolve: {
     	//定义好别名后，在模块里不用写前面的文件路径

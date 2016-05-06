@@ -213,6 +213,7 @@ function initDesignArea() {
 				$('#publish-layout .dp-goodsList li').removeClass('ui-droppable');
 				
 				formatHtml = $('#publish-layout').html();
+				
 				toastr.remove();
 				toastr.success('发布成功');
 				$('#btn-publish').removeClass('disabled').attr('disabled', false);

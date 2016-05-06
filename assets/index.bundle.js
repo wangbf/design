@@ -85,7 +85,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://design.vinuxpost.com/assets/";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -132,7 +132,7 @@
 	}
 
 	function initLeftMenu() {
-		var LeftMenu = __webpack_require__(63);
+		var LeftMenu = __webpack_require__(60);
 		var layout = MainConstants.MENU.BOX;
 		layout.subs.push(MainConstants.MENU.BOX100);
 		layout.subs.push(MainConstants.MENU.BOX1260);
@@ -310,6 +310,7 @@
 					$('#publish-layout .dp-goodsList li').removeClass('ui-droppable');
 					
 					formatHtml = $('#publish-layout').html();
+					
 					toastr.remove();
 					toastr.success('发布成功');
 					$('#btn-publish').removeClass('disabled').attr('disabled', false);
@@ -4332,15 +4333,12 @@
 	module.exports = SetBoxModal;
 
 /***/ },
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Backbone = __webpack_require__(1);
 	Backbone.$ = __webpack_require__(4);
-	var template = __webpack_require__(64),
+	var template = __webpack_require__(61),
 		ModuleFactory = __webpack_require__(2),
 		MainStore = __webpack_require__(6);
 
@@ -4412,7 +4410,7 @@
 	module.exports = LeftMenu;
 
 /***/ },
-/* 64 */
+/* 61 */
 /***/ function(module, exports) {
 
 	module.exports = "<%for (var i = 0; i < menus.length; i++) {%>\r\n\t<li> \r\n\t\t<a href=\"javascript: void(0);\"><i class=\"fa fa-th-large z16\"></i> <span class=\"nav-label\"><%=menus[i].name%></span></a>\r\n\t\t<ul class=\"nav nav-second-level\">\r\n\t\t\t<%var subs = menus[i].subs;%>\r\n\t\t\t<%for (var j = 0; j < subs.length; j++) {%>\r\n\t\t\t\t<li class=\"panel-item-<%=menus[i].type%> ui-draggable\" data-type=\"<%=subs[j].type%>\">\r\n\t\t\t\t\t\t<a class=\"drag\"><%=subs[j].name%></a>\r\n\t\t\t\t</li>\r\n\t\t\t<%}%>\r\n\t\t</ul>\r\n\t</li>\r\n<%}%>";

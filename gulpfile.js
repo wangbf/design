@@ -11,7 +11,7 @@ var dist = __dirname + '/dist';
  */
 gulp.task('md5:js', function (done) {
     gulp.src('assets/*.js')
-        .pipe(md5(10, './WEB-INF/ftl/shop/index.ftl'))
+        .pipe(md5(10, './index.html'))
         .pipe(gulp.dest('assets'))
         .on('end', done);
 });
