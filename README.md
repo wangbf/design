@@ -11,7 +11,7 @@
 	组件化的框架非常丰富，avalong、angular、vue.js、reactjs、backbone等。
 	每个框架都能解决一些痛点，但考虑到浏览器兼容性、学习曲线、复杂性等问题，最终选择了backbone.js。backbone.js的文件很小，并且没有像其他框架一样应用了一些现代浏览器支持的js特性来实现对象的监听，对浏览器支持很好，上手很快，基本照着官网的帮助文档就能使用了。
 	
-	backbone的路由功能可以提供很好单页面应用的支持，对应奶牛端的应用场景可能很适合。
+	backbone的路由功能可以提供很好单页面应用的支持。
 
 	同时引入backbone.layoutmanager做view的布局管理。
 
